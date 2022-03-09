@@ -1,13 +1,11 @@
-// routes/Auth.js
-
-import { useContext,  useEffect } from 'react'
+import { useContext , useEffect } from 'react'
 
 import { Navigate } from 'react-router-dom'
 import UsersContext from './../context/Users/UsersContext'
 
 
 
-export default function Auth({ component: Component }) {
+export default function Priv({ component: Component }) {
 
 	const userCtx = useContext(UsersContext)
 
@@ -27,10 +25,10 @@ export default function Auth({ component: Component }) {
 		{
 			authStatus ?
 			// SI EL USUARIO YA ESTÁ LOGGEADO, ENTONCES, ENVÍAME AL HOME
-			(<Navigate replace to ="/" />)
+			(<Component />)
 			:
 			// SI EL USUARIO NO ESTÁ LOGGEADO, ENTONCES, DÉJAME ACCEDER AL COMPONENTE PROP QUE TRAE LA RUTA
-			(<Component />)
+			(<Navigate replace to ="/registro" />)
 		}
 
 		

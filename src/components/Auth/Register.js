@@ -6,6 +6,7 @@ import UsersContext from './../../context/Users/UsersContext'
 
 export default function Register() {
 
+
   const ctxUser = useContext(UsersContext)
 
   const {
@@ -17,7 +18,12 @@ export default function Register() {
     name: "",
     lastname: "",
     email: "",
-    password: ""
+    password: "",
+    address:"",
+    phone:"",
+    age: "", 
+    living: "",
+    
   })
 
 
@@ -74,6 +80,47 @@ export default function Register() {
           onChange={(evt) => { handleChange(evt) }}
           type="password"
         />
+      
+        <br />
+
+        <label>Direccion</label>
+        <input  
+          name="address"
+          value={data.address}
+          onChange={(evt) => { handleChange(evt) }}
+          
+        />
+        
+        <br />
+
+        <label>Phone</label>
+        <input  
+          name="phone"
+          value={data.phone}
+          onChange={(evt) => { handleChange(evt) }}
+          
+        />
+
+        <br />
+
+        <label>Age</label>
+        <input  
+          name="age"
+          value={data.age}
+          onChange={(evt) => { handleChange(evt) }}
+        
+        />
+
+        <br />
+
+          <label>Living</label>
+          <input  
+            name="living"
+            value={data.living}
+            onChange={(evt) => { handleChange(evt) }}
+          
+          />
+
 
         <button type="submit">Crear usuario</button>
 

@@ -13,7 +13,12 @@ const UsersState = (props) => {
 		currentUser: {
 			name: "",
 			lastname: "",
-			email: ""
+			email: "",
+			password: "",
+			address: "",
+			phone : "",
+			age: "",
+			living: ""
 		},
 		authStatus: false
 	}
@@ -49,7 +54,7 @@ const UsersState = (props) => {
 		axiosClient.defaults.headers.common["x-auth-token"] = token
 
 		// 2. REALIZAR PETICIÓN AXIOS
-		const res = await axiosClient.get("/api/users/verifytoken")
+		const res = await axiosClient.get("/api/users/verifyToken")
 		
 		const userData = res.data.data
 
@@ -99,6 +104,7 @@ const UsersState = (props) => {
 
 
 export default UsersState
+
 
 
 
