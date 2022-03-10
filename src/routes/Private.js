@@ -18,6 +18,9 @@ export default function Priv({ component: Component }) {
 		verifyingToken()
 	}, [authStatus])
 
+	
+	
+
 
   return (
 	<div>
@@ -28,7 +31,8 @@ export default function Priv({ component: Component }) {
 			(<Component />)
 			:
 			// SI EL USUARIO NO ESTÁ LOGGEADO, ENTONCES, DÉJAME ACCEDER AL COMPONENTE PROP QUE TRAE LA RUTA
-			(<Navigate replace to ="/registro" />)
+			
+			(<Navigate replace to ="/" />)
 		}
 
 		

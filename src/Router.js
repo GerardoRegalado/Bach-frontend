@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout';
 import PetsState from './context/Pets/PetsState';
 import UsersState from './context/Users/UsersState';
 import './App.css'
+import TdahState from './context/Tdah/TdahState'
 
 import Auth from './routes/Auth'
 import Public from './routes/Public';
@@ -23,65 +24,34 @@ import Tdah from './components/Surveys/Tdah';
 
 
 function Router() {
+
   return (
     <>
+     
+      
       <PetsState>
       <UsersState>
+      <TdahState>
 
-      <BrowserRouter>
+        <BrowserRouter>
           <Routes>
-          
-          <Route 
-                  path="/"
-                  element={
-                    <Public component={Bach} />
-                  } 
-                />
-            
-            <Route path="home" element={<Layout />}>
-                <Route 
-                  index 
-                  element={
-                    <Public component={Home}
-                  />} 
-                />
 
-                {/* localhost:3000/registro */}
-                <Route 
-                  path="registro"
-                  element={
-                    <Auth component={Register} />
-                  } 
-                />
-
-                {/* localhost:3000/login */}
-                <Route 
-                  path="login"
-                  element={
-                    <Auth component={Login} />
-                  } 
-                />        
-
-                
-                {/* localhost:3000/tdah */}
-                <Route 
-                  path="tdah"
-                  element={
-                    <Public component={Tdah} />
-                  } 
-                />           
-
+            <Route path="/" element={<Layout />}>
+            <Route index element={<Public component={Bach}/>} />
+            <Route path="register" element={<Auth component={Register} />} />
+            <Route path="login"element={<Auth component={Login} />} />        
+            <Route path="tdah"element={<Priv component={Tdah} />} />    
             </Route>
-
-            
-
 
           </Routes>
 
-      </BrowserRouter>
+        </BrowserRouter>
 
+      </TdahState>
       </UsersState>
       </PetsState>
+     
+      
 
     </>
   );

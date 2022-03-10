@@ -27,6 +27,7 @@ const PetsState = (props) => {
 			payload: arrCats
 		})
 
+		
 	}
 
 	const createPet = async (dataForm) => {

@@ -3,6 +3,7 @@
 // ./src/components/Home/Home.js
 
 import { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import PetsContext from './../../context/Pets/PetsContext'
 
 import UsersContext from './../../context/Users/UsersContext'
@@ -26,7 +27,7 @@ export default function Home() {
 	} = ctxUsers
 
 
-	console.log(ctxUsers)
+	//console.log(ctxUsers)
 
 	const [newPet, setNewPet] = useState({
 		name: "",
@@ -103,6 +104,9 @@ export default function Home() {
 		<p>{currentUser.lastname}</p>
 		<p>{currentUser.email}</p>
 
+		
+
+		<Link to="/tdah">Encuesta TDAH</Link>
 
 	</>
   )
