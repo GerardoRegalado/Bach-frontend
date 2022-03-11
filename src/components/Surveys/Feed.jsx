@@ -34,12 +34,13 @@ export default function Feed() {
   return (
     <>
      
+     <div className='bg-gray-800 text-white'>
       <h1><strong>BIENVENIDO A TU PERFIL</strong></h1>
       <div>{currentUser.name}</div>
 
       <h3>Informacion de usuario:</h3>
 
-      <p>{currentUser.name}</p>
+      
       <p>{currentUser.address}</p>
       <p>{currentUser.age}</p>
 
@@ -48,7 +49,7 @@ export default function Feed() {
       {
         (!surveyiD) ? <p>TDAH survey pendiente</p> : <p>TDAH survey completada</p>
       }
-
+</div>
     </>
   )
 }

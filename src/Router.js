@@ -17,6 +17,7 @@ import Login from './components/Auth/Login'
 import Bach from './components/Home-Bach/Bach';
 import Tdah from './components/Surveys/Tdah';
 import Feed from './components/Surveys/Feed';
+import Doctors from './components/Surveys/Doctors';
 
 
 
@@ -33,7 +34,7 @@ function Router() {
     <>
      
       
-      <PetsState>
+     
       <UsersState>
       <TdahState>
 
@@ -46,6 +47,7 @@ function Router() {
             <Route path="login"element={<Auth component={Login} />} />        
             <Route path="tdah"element={<Public component={Tdah} />} />   
             <Route path="feed"element={<Public component={Feed} />} />
+            <Route path="doctors"element={<Public component={Doctors} />} />
             </Route>
 
           </Routes>
@@ -54,7 +56,7 @@ function Router() {
 
       </TdahState>
       </UsersState>
-      </PetsState>
+      
      
       
 

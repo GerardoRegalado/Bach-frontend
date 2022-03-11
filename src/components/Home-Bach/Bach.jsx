@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { NewspaperIcon, PhoneIcon, SupportIcon } from '@heroicons/react/outline'
+import { BookOpenIcon, ChatIcon, NewspaperIcon, PhoneIcon, SaveAsIcon, SupportIcon } from '@heroicons/react/outline'
 
 
 
@@ -13,7 +13,7 @@ export default function Bach() {
       href: '/tdah',
       description:
         'Llena una encuesta express que nos ayudara a dar un diagnostico inicial que podra ser revisado por alguno de nuestro catalogo de especialistas con quien podras conectar para dar mas detalles',
-      icon: PhoneIcon,
+      icon: BookOpenIcon,
     },
     {
       name: 'Visita tu perfil',
@@ -27,7 +27,7 @@ export default function Bach() {
       href: '/doctors',
       description:
         'Encuentra al mejor especialista en nuestra web ',
-      icon: NewspaperIcon,
+      icon: ChatIcon,
     },
   ]
 
