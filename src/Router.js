@@ -16,6 +16,10 @@ import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 import Bach from './components/Home-Bach/Bach';
 import Tdah from './components/Surveys/Tdah';
+import Feed from './components/Surveys/Feed';
+
+
+
 
 
 
@@ -40,7 +44,8 @@ function Router() {
             <Route index element={<Public component={Bach}/>} />
             <Route path="register" element={<Auth component={Register} />} />
             <Route path="login"element={<Auth component={Login} />} />        
-            <Route path="tdah"element={<Priv component={Tdah} />} />    
+            <Route path="tdah"element={<Public component={Tdah} />} />   
+            <Route path="feed"element={<Public component={Feed} />} />
             </Route>
 
           </Routes>

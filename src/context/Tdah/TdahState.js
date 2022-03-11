@@ -14,9 +14,10 @@ const TdahState = (props) => {
     const { currentUser } = ctxUsers
 
     const user = currentUser._id
+
     
     const initialState = {
-        TdahSurvey: {  
+        currentSurvey: {
             questionOne: "",
             questionTwo: "",
             questionThree: "",
@@ -27,29 +28,44 @@ const TdahState = (props) => {
             questionEight: "",
             questionNine: "",
             questionTen: "",
-            userID:user
+            userID: user,
         }
     }
 
     const [globalState , dispatch] = useReducer(TdahReducer, initialState)
  
     const sendTdahSurvey = async (TdahForm) => {
-		
-		const res =	await axiosClient.post("/api/surveys/tdah", TdahForm)	
 
-		
+        const res =	await axiosClient.post("/api/surveys/tdah", TdahForm)	
 
+             console.log(res) 
+        
 	}
 
-    console.log(sendTdahSurvey)
+    const getSurvey = async (id) => {
 
+        const res = await axiosClient.get("/api/surveys/tdah" + (id ? '/'+ id : ''))
+
+        const arraySurvey = res.data.data
+
+        dispatch({
+            type: "GET_SURVEY",
+            payload: arraySurvey
+        })
+    }
+
+  
+
+
+    
     return (
         
         <TdahContext.Provider
             	value={{
-				TdahSurvey : globalState.TdahSurvey,
+				currentSurvey : globalState.currentSurvey,
 				msgError: globalState.msgError,
-                sendTdahSurvey
+                sendTdahSurvey,
+                getSurvey
 			
 			}}
 		>

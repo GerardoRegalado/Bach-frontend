@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <>
-	<header className='bg-gray-900'>
+	<header className='bg-gray-800'>
 	<nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="w-full py-6 flex items-center justify-between border-b border-gray-500 lg:border-none">
 
@@ -86,6 +86,9 @@ export default function Header() {
 						</Link>
 					</li>
 
+					<li>
+						<Link className="inline-flex items-center px-2.5 py-1.5 text-white"  to="/login" > ya eres miembro? inicia sesion</Link>
+					</li>
 
 					</ul>	
 					
@@ -94,13 +97,6 @@ export default function Header() {
 			)
 
 		}
-
-<div className="w-full py-6 flex items-center justify-between border-b border-gray-500 lg:border-none py-4 flex flex-wrap justify-center space-x-6 lg:hidden">
-					<a href="/profile" className='text-base font-medium text-gray-400 hover:text-indigo-50'>Perfil</a>
-					<a href="/surveys"className='text-base font-medium text-gray-400 hover:text-indigo-50' >Encuestas</a>
-					<a href="/doctors" className='text-base font-medium text-gray-400 hover:text-indigo-50'>Doctores</a>
-					<a href="/appointments" className='text-base font-medium text-gray-400 hover:text-indigo-50'>Tus citas</a>
-					</div>
 
         </div>
 
